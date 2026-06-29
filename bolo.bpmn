@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1tdh7n7" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.16.0">
+  <bpmn:process id="Process_1ixofj2" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_0omxm9m" name="INICIO">
+      <bpmn:outgoing>Flow_15qpy16</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_0gyuq60" name="separar materiais">
+      <bpmn:incoming>Flow_15qpy16</bpmn:incoming>
+      <bpmn:outgoing>Flow_18y0svt</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_07o4o5q" name="misturar ingredientes">
+      <bpmn:incoming>Flow_18y0svt</bpmn:incoming>
+      <bpmn:outgoing>Flow_0yshv4k</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_1gfrxg8" name="assar o bolo">
+      <bpmn:incoming>Flow_0yshv4k</bpmn:incoming>
+      <bpmn:outgoing>Flow_0s8xo51</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_060pzw6" name="retirar do forno e desenformar">
+      <bpmn:incoming>Flow_0s8xo51</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ilgtt9</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_0uyozzk" name="FIM">
+      <bpmn:incoming>Flow_1ilgtt9</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_15qpy16" sourceRef="StartEvent_0omxm9m" targetRef="Activity_0gyuq60" />
+    <bpmn:sequenceFlow id="Flow_18y0svt" sourceRef="Activity_0gyuq60" targetRef="Activity_07o4o5q" />
+    <bpmn:sequenceFlow id="Flow_0yshv4k" sourceRef="Activity_07o4o5q" targetRef="Activity_1gfrxg8" />
+    <bpmn:sequenceFlow id="Flow_0s8xo51" sourceRef="Activity_1gfrxg8" targetRef="Activity_060pzw6" />
+    <bpmn:sequenceFlow id="Flow_1ilgtt9" sourceRef="Activity_060pzw6" targetRef="Event_0uyozzk" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1ixofj2">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_0omxm9m">
+        <dc:Bounds x="156" y="82" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="157" y="125" width="34" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0gyuq60_di" bpmnElement="Activity_0gyuq60">
+        <dc:Bounds x="260" y="60" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_07o4o5q_di" bpmnElement="Activity_07o4o5q">
+        <dc:Bounds x="430" y="60" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gfrxg8_di" bpmnElement="Activity_1gfrxg8">
+        <dc:Bounds x="600" y="60" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_060pzw6_di" bpmnElement="Activity_060pzw6">
+        <dc:Bounds x="760" y="60" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0uyozzk_di" bpmnElement="Event_0uyozzk">
+        <dc:Bounds x="922" y="82" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="931" y="125" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_15qpy16_di" bpmnElement="Flow_15qpy16">
+        <di:waypoint x="192" y="100" />
+        <di:waypoint x="260" y="100" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18y0svt_di" bpmnElement="Flow_18y0svt">
+        <di:waypoint x="360" y="100" />
+        <di:waypoint x="430" y="100" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0yshv4k_di" bpmnElement="Flow_0yshv4k">
+        <di:waypoint x="530" y="100" />
+        <di:waypoint x="600" y="100" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0s8xo51_di" bpmnElement="Flow_0s8xo51">
+        <di:waypoint x="700" y="100" />
+        <di:waypoint x="760" y="100" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ilgtt9_di" bpmnElement="Flow_1ilgtt9">
+        <di:waypoint x="860" y="100" />
+        <di:waypoint x="922" y="100" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
